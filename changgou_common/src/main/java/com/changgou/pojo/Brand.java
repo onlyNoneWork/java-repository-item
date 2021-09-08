@@ -1,4 +1,4 @@
-package com.changgou.goods.pojo;
+package com.changgou.pojo;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
