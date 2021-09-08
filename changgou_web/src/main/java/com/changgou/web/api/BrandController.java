@@ -17,8 +17,6 @@ import java.util.List;
 @Slf4j
 @RestController
 @RequestMapping
-
-@Controller
 @RequiredArgsConstructor
 public class BrandController {
 
