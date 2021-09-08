@@ -1,0 +1,21 @@
+spring:
+###################### mysql ###########################
+    datasource:
+        driver-class-name: com.mysql.jdbc.Driver
+        url: jdbc:mysql://saas.database:3306/shufu_tag?allowMultiQueries=true&zeroDateTimeBehavior=convertToNull&characterEncoding=UTF-8&useSSL=false
+        username: root
+        password: 1017~Fulin
+        #    url: jdbc:mysql://saas.database:6007/shufu_tag?allowMultiQueries=true&zeroDateTimeBehavior=convertToNull&characterEncoding=UTF-8&useSSL=false
+        #    username: flkj
+        #    password: z4QdkqfPV8APyZ7A
+
+mybatis:
+    mapper-locations: classpath:mappers/*.xml
+    type-aliases-package: shufu.tag.db.model
+    configuration:
+    mapUnderscoreToCamelCase: true
+mapper:
+    mappers:
+    - shufu.tag.db.config.MyMapper
+    not-empty: false
+    identity: MYSQL

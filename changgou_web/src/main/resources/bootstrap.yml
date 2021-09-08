@@ -1,0 +1,25 @@
+###################### server info #####################
+server:
+  port: 8080
+  ssl:
+    enabled: false
+  error:
+    whitelabel:
+      enabled: false
+spring:
+  application:
+    name: gameTest
+  ###################### consul ###########################
+  cloud:
+    consul:
+      host: agent
+      port: 8500
+      discovery:
+        healthCheckUrl: http://localhost:${server.port}/health
+        healthCheckInterval: 15s
+        instance-id: ${spring.application.name}-${spring.cloud.consul.discovery.hostname}
+        hostname: agent
+        enabled: true
+        heartbeat:
+          enabled: true
+
