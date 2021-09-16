@@ -30,6 +30,10 @@ public class Result<T> {
         this.message = "执行成功";
     }
 
+    public static Result success(String message, Object data){
+        return new Result<>(true, 200, message, data);
+    }
+
     public boolean isFlag() {
         return flag;
     }

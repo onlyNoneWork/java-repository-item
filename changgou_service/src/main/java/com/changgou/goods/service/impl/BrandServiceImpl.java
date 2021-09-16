@@ -19,10 +19,24 @@ public class BrandServiceImpl implements BrandService {
 
     private BrandMapper brandMapper;
 
+    /**
+     * 查询所有的品牌列表
+     * @return
+     */
     @Override
     public List<Brand> findAll() {
         List<Brand> brands = brandMapper.selectAll();
         return brands;
+    }
+
+    /**
+     * 通过id查询品牌
+     * @param id
+     * @return
+     */
+    @Override
+    public Brand findBrandById(Integer id) {
+        return brandMapper.selectOne(Brand.builder().id(id).build());
     }
 
 }
