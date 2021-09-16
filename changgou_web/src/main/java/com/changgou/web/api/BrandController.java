@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import io.swagger.annotations.Api;
 
 import java.util.List;
 
@@ -15,6 +16,7 @@ import java.util.List;
  * @date: 2021/9/8 17:31
  */
 @Slf4j
+@Api("特征接口")
 @RestController
 @RequestMapping
 @RequiredArgsConstructor

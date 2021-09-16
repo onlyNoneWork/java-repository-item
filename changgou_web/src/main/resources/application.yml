@@ -16,6 +16,6 @@ mybatis:
     mapUnderscoreToCamelCase: true
 mapper:
     mappers:
-    - shufu.tag.db.config.MyMapper
+#    - shufu.tag.db.config.MyMapper
     not-empty: false
     identity: MYSQL
