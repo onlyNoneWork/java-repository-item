@@ -9,6 +9,7 @@ import javax.persistence.Column;
 import javax.persistence.Table;
 
 /**
+ * 商品分类
  * @author: hui.jin
  * @date: 2021/9/17 18:18
  */
