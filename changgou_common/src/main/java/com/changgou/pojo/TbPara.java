@@ -5,44 +5,46 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Id;
+import javax.persistence.Column;
 import javax.persistence.Table;
-import java.io.Serializable;
 
 /**
+ * 参数表
  * @author: hui.jin
- * @date: 2021/9/8 14:01
+ * @date: 2021/9/17 18:16
  */
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "tb_brand")
-public class Brand implements Serializable {
+@Table(name = "tb_para")
+public class TbPara {
 
     /**
-     * 品牌 id
+     * id
      */
-    @Id
-    private int id;
+    private Integer id;
 
     /**
-     * 品牌名称
+     * 名称
      */
     private String name;
 
     /**
-     * 品牌图片地址
+     * 选项
      */
-    private String image;
-
-    /**
-     * 品牌的首字母
-     */
-    private String letter;
+    private String options;
 
     /**
      * 排序
      */
     private Integer seq;
+
+    /**
+     * 模板id
+     */
+    @Column(name = "template_id")
+    private Integer templateId;
+
+
 }

@@ -11,7 +11,17 @@ import java.util.List;
  */
 public interface BrandService {
 
-    public List<Brand> findAll();
+    List<Brand> findAll();
 
     Brand findBrandById(Integer id);
+
+    Boolean brandAdd(Brand brand);
+
+    Boolean brandUpdate(Brand brand);
+
+    Boolean brandDelete(Integer id);
+
+    List<Brand> findBrandBy(Brand brand);
+
+    List<Brand> findBrandByCate(String name);
 }

@@ -30,6 +30,15 @@ public class Result<T> {
         this.message = "执行成功";
     }
 
+    public static Result booleanResule(Boolean check){
+        if (check) {
+            return new Result<>(true, 200, "成功", "");
+        } else {
+            return new Result<>(false, 500, "失败", "");
+        }
+
+    }
+
     public static Result success(String message, Object data){
         return new Result<>(true, 200, message, data);
     }
