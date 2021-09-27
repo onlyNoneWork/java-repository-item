@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 /**
+ * 规格的servie
  * @author: hui.jin
  * @date: 2021/9/18 11:26
  */
