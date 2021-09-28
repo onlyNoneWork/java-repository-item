@@ -22,3 +22,5 @@ mapper:
     - com.changgou.goods.config.MyMapper
     not-empty: false
     identity: MYSQL
+
+
