@@ -15,22 +15,19 @@ import java.net.InetSocketAddress;
  * @date: 2021/9/30 15:03
  */
 @Slf4j
-public class IpFilter implements GlobalFilter, Ordered {
-
-
+public class UrlFilter implements GlobalFilter, Ordered {
 
     @Override
     public int getOrder() {
-        return 1;
+        return 2;
     }
 
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
-        log.info("执行第一个过滤器IpFilter--Start");
+        log.info("执行第二个过滤器UrlFilter--Start");
         ServerHttpRequest request = exchange.getRequest();
-        InetSocketAddress remoteAddress = request.getRemoteAddress();
-        String hostName = remoteAddress.getHostName();
-        log.info("过滤器IpFilter的ip:"+hostName);
+        String url = request.getURI().getPath();
+        log.info("过滤器UrlFilter的url:"+url);
 
         return chain.filter(exchange);
     }

@@ -28,7 +28,7 @@ import static com.changgou.constant.ServiceConstants.PATH_V2;
 @RestController
 @RequestMapping(value = PATH_V2)
 @RequiredArgsConstructor
-public class BrandController {
+public class BrandController{
 
     private BrandService brandService;
 
