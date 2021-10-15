@@ -50,3 +50,5 @@ eureka:
     instance:
       prefer-ip-address: true
 
+workerId: 0
+datacenterId: 0

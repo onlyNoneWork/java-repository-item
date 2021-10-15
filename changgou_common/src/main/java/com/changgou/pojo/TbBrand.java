@@ -10,6 +10,7 @@ import javax.persistence.Table;
 import java.io.Serializable;
 
 /**
+ * 品牌对象
  * @author: hui.jin
  * @date: 2021/9/8 14:01
  */
@@ -18,7 +19,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "tb_brand")
-public class Brand implements Serializable {
+public class TbBrand implements Serializable {
 
     /**
      * 品牌 id

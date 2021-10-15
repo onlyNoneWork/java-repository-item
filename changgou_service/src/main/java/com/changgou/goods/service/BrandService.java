@@ -1,6 +1,6 @@
 package com.changgou.goods.service;
 
-import com.changgou.pojo.Brand;
+import com.changgou.pojo.TbBrand;
 
 import java.util.List;
 
@@ -11,17 +11,17 @@ import java.util.List;
  */
 public interface BrandService {
 
-    List<Brand> findAll();
+    List<TbBrand> findAll();
 
-    Brand findBrandById(Integer id);
+    TbBrand findBrandById(Integer id);
 
-    Boolean brandAdd(Brand brand);
+    Boolean brandAdd(TbBrand brand);
 
-    Boolean brandUpdate(Brand brand);
+    Boolean brandUpdate(TbBrand brand);
 
     Boolean brandDelete(Integer id);
 
-    List<Brand> findBrandBy(Brand brand);
+    List<TbBrand> findBrandBy(TbBrand brand);
 
-    List<Brand> findBrandByCate(String name);
+    List<TbBrand> findBrandByCate(String name);
 }

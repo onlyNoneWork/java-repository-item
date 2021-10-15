@@ -3,18 +3,14 @@ package com.changgou.web.api;
 import com.changgou.entity.PageResult;
 import com.changgou.entity.Result;
 import com.changgou.goods.service.BrandService;
-import com.changgou.pojo.Brand;
+import com.changgou.pojo.TbBrand;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.ibatis.annotations.Param;
 import org.springframework.web.bind.annotation.*;
 import io.swagger.annotations.Api;
-
-import javax.websocket.server.PathParam;
-import java.util.List;
 
 import static com.changgou.constant.ServiceConstants.PATH_V2;
 
@@ -62,10 +58,10 @@ public class BrandController{
      */
     @ApiOperation("多条件查询品牌")
     @GetMapping(value = "brand/selectBrands")
-    public Result findBrandBy(@RequestBody Brand brand, @RequestBody Integer page, @RequestBody Integer size) {
+    public Result findBrandBy(@RequestBody TbBrand brand, @RequestBody Integer page, @RequestBody Integer size) {
 
         PageHelper.startPage(page, size);
-        Page<Brand> brandPage = (Page<Brand>) brandService.findBrandBy(brand);
+        Page<TbBrand> brandPage = (Page<TbBrand>) brandService.findBrandBy(brand);
         PageResult result = new PageResult(brandPage.getTotal(), brandPage.getResult());
 
         return Result.success("查询成功", result);
@@ -90,7 +86,7 @@ public class BrandController{
      */
     @ApiOperation("新增品牌")
     @PostMapping(value = "brand/add")
-    public Result brandAdd(@RequestBody Brand brand) {
+    public Result brandAdd(@RequestBody TbBrand brand) {
         return Result.booleanResule(brandService.brandAdd(brand));
     }
 
@@ -101,7 +97,7 @@ public class BrandController{
      */
     @ApiOperation("修改品牌")
     @PostMapping(value = "brand/update")
-    public Result brandUpdate(@RequestBody Brand brand) {
+    public Result brandUpdate(@RequestBody TbBrand brand) {
         return Result.booleanResule(brandService.brandUpdate(brand));
     }
 

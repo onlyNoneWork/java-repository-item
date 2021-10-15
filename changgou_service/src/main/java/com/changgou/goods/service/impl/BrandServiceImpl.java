@@ -3,7 +3,7 @@ package com.changgou.goods.service.impl;
 import com.changgou.exception.NullParamException;
 import com.changgou.goods.mapper.BrandMapper;
 import com.changgou.goods.service.BrandService;
-import com.changgou.pojo.Brand;
+import com.changgou.pojo.TbBrand;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
@@ -27,8 +27,8 @@ public class BrandServiceImpl implements BrandService {
      * @return
      */
     @Override
-    public List<Brand> findAll() {
-        List<Brand> brands = brandMapper.selectAll();
+    public List<TbBrand> findAll() {
+        List<TbBrand> brands = brandMapper.selectAll();
         return brands;
     }
 
@@ -38,8 +38,8 @@ public class BrandServiceImpl implements BrandService {
      * @return
      */
     @Override
-    public Brand findBrandById(Integer id) {
-        return brandMapper.selectOne(Brand.builder().id(id).build());
+    public TbBrand findBrandById(Integer id) {
+        return brandMapper.selectOne(TbBrand.builder().id(id).build());
     }
 
     /**
@@ -48,7 +48,7 @@ public class BrandServiceImpl implements BrandService {
      * @return
      */
     @Override
-    public Boolean brandAdd(Brand brand) {
+    public Boolean brandAdd(TbBrand brand) {
 
         String check = checkBrand(brand);
         if (StringUtils.hasLength(check)) {
@@ -66,7 +66,7 @@ public class BrandServiceImpl implements BrandService {
      * @return
      */
     @Override
-    public Boolean brandUpdate(Brand brand) {
+    public Boolean brandUpdate(TbBrand brand) {
 
         if (brand.getId() <= 0) {
             throw new NullParamException("品牌id");
@@ -84,15 +84,15 @@ public class BrandServiceImpl implements BrandService {
     @Override
     public Boolean brandDelete(Integer id) {
 
-        int i = brandMapper.delete(Brand.builder().id(id).build());
+        int i = brandMapper.delete(TbBrand.builder().id(id).build());
 
         return i == 1;
     }
 
     @Override
-    public List<Brand> findBrandBy(Brand brand) {
+    public List<TbBrand> findBrandBy(TbBrand brand) {
 
-        Example example = new Example(Brand.class);
+        Example example = new Example(TbBrand.class);
         Example.Criteria criteria = example.createCriteria();
 
         if (StringUtils.hasLength(brand.getName())) {
@@ -111,7 +111,7 @@ public class BrandServiceImpl implements BrandService {
      * @return 品牌分类
      */
     @Override
-    public List<Brand> findBrandByCate(String name) {
+    public List<TbBrand> findBrandByCate(String name) {
 
         return brandMapper.selectBrandByCate(name);
     }
@@ -121,7 +121,7 @@ public class BrandServiceImpl implements BrandService {
      * @param brand
      * @return
      */
-    private String checkBrand(Brand brand) {
+    private String checkBrand(TbBrand brand) {
         String check = "";
         if (!StringUtils.hasLength(brand.getImage())) {
             check = "品牌图片地址";
